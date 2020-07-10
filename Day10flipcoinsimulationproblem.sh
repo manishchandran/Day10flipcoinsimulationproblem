@@ -1,5 +1,5 @@
 #!/bin/bash  
-#uc2
+#uc3
 Heads=0
 Tails=0
 flips=0
@@ -13,14 +13,20 @@ do
 		Tails=`expr $Tails + 1`
 	fi
 	flips=`expr $flips + 1`
-if [[ ($Heads -eq 10) || ($Tails -eq 10) ]]
+if [[ ($Heads -eq 21) || ($Tails -eq 21) ]]
 then 
-	break
+	if [ $Heads -eq 21 ]
+	then
+		echo "Heads won"
+		echo "Won by:"$Heads
+		break
+	else 
+		echo "Tails won"
+		echo "Won by:"$Tails 
+		break
+	fi
 else
 	continue
 fi
 done
-echo "No of times heads won:"$Heads 
-echo "No of times tails won:"$Tails
-
 
